@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 class FlexStoreClient {
-  constructor(baseURL = 'http://localhost:8000') {
+  constructor() {
     this.client = axios.create({
-      baseURL,
+      baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
       headers: {
         'Content-Type': 'application/json',
       },
